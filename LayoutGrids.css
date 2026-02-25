@@ -1,0 +1,38 @@
+/*****Grids******/
+
+/*******index side grid*********/
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+}
+
+a {
+  grid-column: span 2;
+}
+
+h2,
+p {
+  display: grid;
+  grid-template-rows: 2/4;
+}
+
+/********'Produktliste side grids**********/
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 15px;
+}
+h1 {
+  display: grid;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+  border: 3px solid #2a2f1d;
+}

@@ -1,0 +1,42 @@
+a:link,
+a:visited {
+  background-color: rgb(14, 13, 13);
+  background: rgb(93, 114, 93);
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: lightblue;
+}
+
+header {
+  background-color: rgb(93, 114, 93);
+}
+
+footer {
+  background-color: rgb(93, 114, 93);
+}
+
+h1 {
+  font-size: 25px;
+}
+
+.container {
+  margin: 15px;
+}
+
+/*******Produkt galleri****/
+
+main {
+  flex-grow: 1;
+}
+
+.product {
+  border: 2px solid rgb(146, 200, 146);
+  padding: 10px;
+}
