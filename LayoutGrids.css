@@ -35,23 +35,40 @@ img {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
-  width: 50%;
+  width: 100%;
   border: 3px solid #2a2f1d;
 }
 
 /*******produkt siden*****/
 
-.container2 {
+.product1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin: 15px;
   max-width: 50%;
   max-height: 50%;
 }
 
-.product1 {
+.tekst {
   grid-column: 1fr;
+}
+
+@media screen and (max-width: 680px) {
+  .product1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 15px;
+    max-width: 50%;
+    max-height: 50%;
+  }
+  .product-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px;
+  }
 }
