@@ -19,9 +19,14 @@ header {
   top: 0%;
   position: sticky;
   width: 100%;
+  left: 0;
 }
 
 footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  left: 0;
   background-color: rgb(93, 114, 93);
 }
 
@@ -34,15 +39,14 @@ h1 {
 
 main {
   flex-grow: 1;
-  background-color: rgb(109, 121, 109);
 }
 
 .tekst {
   color: rgb(0, 0, 0);
+  padding: 10px;
 }
 
 .productCard {
   background-color: rgb(255, 255, 254);
-  padding: 10px;
   border-radius: 1%;
 }

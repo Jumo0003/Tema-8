@@ -1,4 +1,9 @@
-const listURL = "https://kea-alt-del.dk/t7/api/products";
+console.log("produktliste hentet");
+const params = new URLSearchParams(window.location.search);
+const Mycategory = params.get("category");
+
+const listURL = Mycategory ? `https://kea-alt-del.dk/t7/api/products?category=${encodeURIComponent(Mycategory)}` : "https://kea-alt-del.dk/t7/api/products";
+console.log(listURL);
 const listContainer = document.querySelector("#productListContainer");
 
 function getProducts() {
@@ -21,7 +26,7 @@ function showProducts(products) {
            <p>${product.category}</p>
         <p>Pris: ${product.price}</p>
         <p> ${product.brandname}</p>
-        <a href="produkt.html">Køb</a>
+        <a href="product.html?id=${product.id}">Køb</a>
 </div>
       </article>
     `;
