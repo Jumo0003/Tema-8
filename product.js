@@ -25,6 +25,8 @@ function show(data) {
  <brand>${data.brandname}</brand>
  <a href="product.html">Add To Basket</a>
 </div>
+
+
   `;
 }
 

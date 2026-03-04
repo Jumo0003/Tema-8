@@ -18,13 +18,20 @@ function showProducts(products) {
   products.forEach((product) => {
     listContainer.innerHTML += `
       <article class="productCard">
+      
         
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="Produkt 1" />
+            <div class="badges">
+             ${product.soldout === 1 ? `<p class="badge soldout, soldout">Udsolgt</p>` : ""}
+        ${product.price > 700 ? `<p class="badge fragt">Fri fragt</p>` : ""}
+              ${product.discount > 0 ? `<p class="badge discount">Tilbud</p>` : ""}
+                </div>
           <div class="tekst">
           <h3>${product.productdisplayname}</h3>
            <p> ${product.gender}</p>
+    
            <p>${product.category}</p>
-        <p>Pris: ${product.price}</p>
+        
         <p> ${product.brandname}</p>
         <a href="product.html?id=${product.id}">Køb</a>
 </div>

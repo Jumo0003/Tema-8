@@ -50,3 +50,48 @@ main {
   background-color: rgb(255, 255, 254);
   border-radius: 1%;
 }
+
+/****flag/tilbud/udsalg/osv*******/
+
+.discount {
+  background-color: rgb(14, 13, 13);
+  background: rgb(237, 134, 0);
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.soldout {
+  background-color: rgb(14, 13, 13);
+  background: rgb(255, 0, 0);
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.fragt {
+  background-color: rgb(14, 13, 13);
+  background: rgb(86, 176, 177);
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.productCard {
+  position: relative;
+}
+
+.badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
