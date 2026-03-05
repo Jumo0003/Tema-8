@@ -1,13 +1,37 @@
 console.log("produktliste hentet");
 const params = new URLSearchParams(window.location.search);
 const Mycategory = params.get("category");
+const sortByPriceBtn = document.querySelector("#sortByPriceBtn");
+const filterWomenBtn = document.querySelector("#filterWomenBtn"); // ← ny
+const showAllBtn = document.querySelector("#showAllBtn");
 
 const listURL = Mycategory ? `https://kea-alt-del.dk/t7/api/products?category=${encodeURIComponent(Mycategory)}` : "https://kea-alt-del.dk/t7/api/products";
 console.log(listURL);
 const listContainer = document.querySelector("#productListContainer");
+let allProducts = [];
 
 function getProducts() {
-  fetch(listURL).then((res) => res.json().then((products) => showProducts(products)));
+  fetch(listURL)
+    .then((res) => res.json())
+    .then((products) => {
+      allProducts = products; // ← gem data her
+      showProducts(allProducts);
+    });
+}
+
+function sortByPriceAsc() {
+  const sorted = [...allProducts].sort((a, b) => a.price - b.price);
+  showProducts(sorted);
+}
+sortByPriceBtn.addEventListener("click", sortByPriceAsc);
+filterWomenBtn.addEventListener("click", () => filterByGender("Women"));
+showAllBtn.addEventListener("click", () => showProducts(allProducts));
+
+getProducts();
+
+function filterByGender(targetGender) {
+  const filtered = allProducts.filter((product) => (product.gender || "").toLowerCase() === targetGender.toLowerCase());
+  showProducts(filtered);
 }
 
 function showProducts(products) {
@@ -29,6 +53,7 @@ function showProducts(products) {
           <div class="tekst">
           <h3>${product.productdisplayname}</h3>
            <p> ${product.gender}</p>
+           <p>${product.price}</p>
     
            <p>${product.category}</p>
         
